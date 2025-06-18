@@ -85,6 +85,7 @@ class _ChatbotState extends State<Chatbot> {
             Builder(builder: (context) {
               return Expanded(
                 child: ListView.builder(
+                  padding: EdgeInsets.all(10),
                   reverse: true,
                   itemCount: messages.length,
                   itemBuilder: (context, index) =>
@@ -125,9 +126,9 @@ class _ChatbotState extends State<Chatbot> {
     bool isuser = msg["role"] == "user";
     return Align(
       alignment: isuser ? Alignment.centerRight : Alignment.centerLeft,
-      child: Container(
+      child: Container( 
         padding: EdgeInsets.symmetric(horizontal: 13,vertical: 11),
-        decoration: BoxDecoration(color: isuser ? Color.fromARGB(255, 202, 215, 218) : Color.fromARGB(255, 222, 226, 231)),
+        decoration: BoxDecoration(color: isuser ? Color.fromARGB(255, 202, 215, 218) : Color.fromARGB(255, 222, 226, 231),borderRadius: BorderRadius.circular(20)),
         child: Text(
           msg["text"] ?? "",
           style: TextStyle(color: isuser ? Colors.black : Color.fromARGB(255, 20, 19, 26)),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:whatsappui/Chats.dart';
 import 'package:whatsappui/call.dart';
 import 'package:whatsappui/chatbot.dart';
@@ -46,7 +47,10 @@ class _AppBarexState extends State<AppBarex> {
           onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Chatbot()));},
           backgroundColor: Color.fromARGB(255, 5, 153, 39),
           foregroundColor: Color.fromARGB(255, 246, 250, 250),
-          child: Icon(Icons.add)),
+          child: SizedBox(
+            width: 20,
+            height: 20,
+            child: Lottie.asset("assets/meta.json")),),
       bottomNavigationBar: BottomNavigationBar (items: [
         BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Chats"),
         BottomNavigationBarItem(icon: Icon(Icons.update_sharp), label: "Updates"),
